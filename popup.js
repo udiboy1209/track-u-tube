@@ -16,7 +16,6 @@ function getVideo(searchQuery){
 		dataType: 'json',
 		success: function(data) {
 			getIDs(data);
-			return data;
 		},
 		error: function(){
 			alert('Error Occured');
