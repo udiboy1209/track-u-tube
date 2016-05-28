@@ -35,4 +35,5 @@ document.addEventListener('DOMContentLoaded',function(){
 			result = "Default";
 		getVideo(result);
 	});
+        button.click();
 });
