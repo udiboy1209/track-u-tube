@@ -1,10 +1,19 @@
 function getIDs(data){
 	var items = [];
 	for(i in data.items){
-		items.push(data.items[i].id.videoId.toString());
-	}
+            var x = data.items[i].id.videoId.toString();
+            items.push(x);
+            index = i.toString();
+          chrome.storage.sync.set({index: x},function(){
+          alert('Settings saved');
+         }); 	}
 	for(i in items){
-		$('<p>'+items[i]+'</p><br>').appendTo('#results');
+	index = i.toString();
+		chrome.storage.sync.get(index, function(obj){
+        $('<p>'+obj.index+'</p><br>').appendTo('#results');
+		
+		});
+		
 	}
 }
 
